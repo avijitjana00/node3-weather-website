@@ -7,6 +7,7 @@ const hbs = require('hbs')
 const { rmSync } = require('fs')
 
 const app = express()
+const port = process.env.PORT || 7000
 
 //Define paths for Express config
 const publicPath = path.join(__dirname, '../public')
@@ -89,6 +90,6 @@ app.get('*',(req,res) =>{
     })
 })
 
-app.listen(7000, () => {
-    console.log('Server is up on port 7000.')
+app.listen(port, () => {
+    console.log('Server is up on port '+port)
 })
